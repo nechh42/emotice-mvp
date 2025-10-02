@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 240 40% 98%;
+    --foreground: 240 10% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 15%;
+
+    --primary: 262 70% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 60% 95%;
+    --secondary-foreground: 240 10% 15%;
+
+    --muted: 220 40% 96%;
+    --muted-foreground: 240 5% 50%;
+
+    --accent: 280 65% 88%;
+    --accent-foreground: 262 70% 35%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 30% 92%;
+    --input: 220 30% 92%;
+    --ring: 262 70% 60%;
+
+    --radius: 0.75rem;
+
+    /* Mood colors */
+    --mood-terrible: 0 70% 65%;
+    --mood-bad: 25 80% 60%;
+    --mood-okay: 45 90% 60%;
+    --mood-good: 140 60% 55%;
+    --mood-great: 200 80% 50%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(262 70% 60%) 0%, hsl(220 70% 65%) 100%);
+    --gradient-calm: linear-gradient(180deg, hsl(240 40% 98%) 0%, hsl(262 40% 96%) 100%);
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -2px hsl(262 70% 60% / 0.1);
+    --shadow-glow: 0 0 30px hsl(262 70% 60% / 0.15);
+  }
+
+  .dark {
+    --background: 240 15% 8%;
+    --foreground: 240 10% 95%;
+
+    --card: 240 12% 12%;
+    --card-foreground: 240 10% 95%;
+
+    --popover: 240 12% 12%;
+    --popover-foreground: 240 10% 95%;
+
+    --primary: 262 70% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 10% 18%;
+    --secondary-foreground: 240 10% 95%;
+
+    --muted: 240 10% 18%;
+    --muted-foreground: 240 5% 65%;
+
+    --accent: 280 40% 25%;
+    --accent-foreground: 262 70% 75%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 10% 20%;
+    --input: 240 10% 20%;
+    --ring: 262 70% 65%;
+
+    --shadow-soft: 0 4px 20px -2px hsl(0 0% 0% / 0.3);
+    --shadow-glow: 0 0 30px hsl(262 70% 50% / 0.2);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
