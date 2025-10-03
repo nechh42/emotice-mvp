@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Lock, User } from "lucide-react";
+import Navbar from "@/components/Navbar";
 
 const Auth = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -52,6 +53,7 @@ const Auth = () => {
   return (
     <div className="min-h-screen bg-gradient-calm flex items-center justify-center p-4">
       <div className="w-full max-w-md animate-scale-in">
+      <Navbar />
         {/* Logo */}
         <div className="text-center mb-8">
           <div className="w-16 h-16 rounded-full bg-gradient-primary mx-auto mb-4" />
