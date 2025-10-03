@@ -3,6 +3,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { ArrowLeft, FileText, AlertTriangle } from 'lucide-react'
+import Navbar from '@/components/Navbar' // ← YENİ EKLENEN
 
 const Terms = () => {
   const { i18n } = useTranslation()
@@ -393,6 +394,7 @@ const Terms = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <Navbar />0
       <div className="bg-white shadow-sm border-b">
         <div className="max-w-4xl mx-auto px-4 py-6">
           <Link to="/" className="flex items-center gap-2 text-purple-600 hover:text-purple-700 mb-4">

@@ -3,7 +3,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { ArrowLeft, AlertTriangle, Heart, Phone, ExternalLink } from 'lucide-react'
-
+import Navbar from '@/components/Navbar' 
 const MedicalDisclaimer = () => {
   const { i18n } = useTranslation()
   
@@ -492,6 +492,7 @@ const MedicalDisclaimer = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <Navbar />
       {/* Header */}
       <div className="bg-red-600 text-white shadow-lg">
         <div className="max-w-4xl mx-auto px-4 py-6">

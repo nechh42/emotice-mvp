@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Smile, Frown, Meh, Calendar, TrendingUp } from "lucide-react";
+import Navbar from "@/components/Navbar"; // ← YENİ EKLENEN
 
 const MOODS = [
   { id: 1, emoji: "😭", label: "Terrible", icon: Frown, color: "mood-terrible" },
@@ -40,23 +41,11 @@ const Dashboard = () => {
 
   return (
     <div className="min-h-screen bg-gradient-calm">
-      {/* Header */}
-      <header className="border-b border-border bg-card/50 backdrop-blur-sm">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full bg-gradient-primary" />
-            <h1 className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-              Emotice
-            </h1>
-          </div>
-          <Button variant="outline" size="sm">
-            Sign Out
-          </Button>
-        </div>
-      </header>
+      {/* YENİ: Navbar */}
+      <Navbar />
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 py-8 max-w-4xl">
+      <main className="container mx-auto px-4 py-8 pt-20 max-w-4xl">
         {/* Today's Mood Card */}
         <Card className="p-6 mb-6 shadow-soft animate-fade-in">
           <h2 className="text-2xl font-semibold mb-6 text-center">

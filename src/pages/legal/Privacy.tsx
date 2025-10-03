@@ -3,7 +3,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { ArrowLeft, Shield, Lock, Eye, Database, UserX } from 'lucide-react'
-
+import Navbar from '@/components/Navbar'
 const Privacy = () => {
   const { i18n } = useTranslation()
   
@@ -597,6 +597,7 @@ const Privacy = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <Navbar />
       {/* Header */}
       <div className="bg-white shadow-sm border-b">
         <div className="max-w-4xl mx-auto px-4 py-6">
