@@ -1,12 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Sparkles, Heart, TrendingUp, Shield } from "lucide-react";
+import Navbar from "@/components/Navbar";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-calm">
+      {/* Navbar */}
+      <Navbar />
+
       {/* Hero Section */}
-      <div className="container mx-auto px-4 py-16 md:py-24">
+      <div className="container mx-auto px-4 py-16 md:py-24 pt-24 md:pt-32">
         <div className="max-w-4xl mx-auto text-center animate-fade-in">
           {/* Logo */}
           <div className="w-20 h-20 rounded-full bg-gradient-primary mx-auto mb-6" />
@@ -37,7 +41,7 @@ const Index = () => {
       </div>
 
       {/* Features Section */}
-      <div className="container mx-auto px-4 py-16">
+      <div id="features" className="container mx-auto px-4 py-16">
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {/* Feature 1 */}
           <div className="text-center p-6 rounded-2xl bg-card shadow-soft hover:shadow-glow transition-shadow animate-fade-in">
@@ -75,7 +79,7 @@ const Index = () => {
       </div>
 
       {/* Pricing Preview */}
-      <div className="container mx-auto px-4 py-16">
+      <div id="pricing" className="container mx-auto px-4 py-16">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4">Simple, Transparent Pricing</h2>
           <p className="text-muted-foreground mb-8">
