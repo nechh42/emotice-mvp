@@ -30,6 +30,54 @@ const resources = {
         warning: 'Warning',
         info: 'Information'
       },
+      
+      // Home page
+      home: {
+        hero: {
+          title: 'Never Feel Alone with Your Emotions',
+          subtitle: 'Track your mood, chat with AI companion, and gain insights into your emotional wellness journey.',
+          privacy: 'Your data is private and secure'
+        },
+        cta: {
+          trial: 'Start Free Trial',
+          demo: 'View Demo'
+        },
+        features: {
+          mood: {
+            title: 'Daily Mood Tracking',
+            desc: 'Quick and simple emoji-based tracking. Record how you feel in seconds.'
+          },
+          ai: {
+            title: 'AI Companion',
+            desc: 'Chat with your personal AI companion for emotional support and insights.'
+          },
+          insights: {
+            title: 'Emotional Insights',
+            desc: 'Understand your patterns and trends with beautiful visualizations.'
+          }
+        },
+        pricing: {
+          title: 'Simple, Transparent Pricing',
+          subtitle: 'Start free, upgrade when you\'re ready',
+          free: {
+            title: 'Free',
+            feature1: 'Daily mood tracking',
+            feature2: '5 AI messages per day',
+            feature3: 'Basic insights',
+            button: 'Get Started'
+          },
+          premium: {
+            title: 'Premium',
+            badge: 'POPULAR',
+            feature1: 'Unlimited mood tracking',
+            feature2: '10 AI messages per day',
+            feature3: 'Advanced analytics',
+            feature4: 'Export data',
+            button: 'Start Free Trial'
+          }
+        },
+        footer: '© 2025 Emotice. Your emotional wellness companion.'
+      },
 
       // Navigation
       nav: {
@@ -42,7 +90,9 @@ const resources = {
         legal: 'Legal',
         logout: 'Logout',
         login: 'Login',
-        register: 'Register'
+        register: 'Register',
+        features: 'Features',  
+        pricing: 'Pricing', 
       },
 
       // Auth
@@ -221,6 +271,53 @@ const resources = {
         info: 'Bilgi'
       },
 
+      home: {
+        hero: {
+          title: 'Duygularınızla Asla Yalnız Hissetmeyin',
+          subtitle: 'Ruh halinizi takip edin, yapay zeka arkadaşınızla sohbet edin ve duygusal sağlık yolculuğunuz hakkında bilgi edinin.',
+          privacy: 'Verileriniz gizli ve güvende'
+        },
+        cta: {
+          trial: 'Ücretsiz Deneme Başlat',
+          demo: 'Demoyu Görüntüle'
+        },
+        features: {
+          mood: {
+            title: 'Günlük Ruh Hali Takibi',
+            desc: 'Hızlı ve basit emoji tabanlı takip. Saniyeler içinde nasıl hissettiğinizi kaydedin.'
+          },
+          ai: {
+            title: 'Yapay Zeka Arkadaşı',
+            desc: 'Duygusal destek ve içgörüler için kişisel yapay zeka arkadaşınızla sohbet edin.'
+          },
+          insights: {
+            title: 'Duygusal İçgörüler',
+            desc: 'Güzel görselleştirmelerle kalıplarınızı ve eğilimlerinizi anlayın.'
+          }
+        },
+        pricing: {
+          title: 'Basit, Şeffaf Fiyatlandırma',
+          subtitle: 'Ücretsiz başlayın, hazır olduğunuzda yükseltin',
+          free: {
+            title: 'Ücretsiz',
+            feature1: 'Günlük ruh hali takibi',
+            feature2: 'Günde 5 AI mesajı',
+            feature3: 'Temel içgörüler',
+            button: 'Başla'
+          },
+          premium: {
+            title: 'Premium',
+            badge: 'POPÜLER',
+            feature1: 'Sınırsız ruh hali takibi',
+            feature2: 'Günde 10 AI mesajı',
+            feature3: 'Gelişmiş analizler',
+            feature4: 'Veri dışa aktarma',
+            button: 'Ücretsiz Deneme Başlat'
+          }
+        },
+        footer: '© 2025 Emotice. Duygusal sağlık arkadaşınız.'
+      },
+
       nav: {
         home: 'Ana Sayfa',
         dashboard: 'Panel',
@@ -231,7 +328,10 @@ const resources = {
         legal: 'Yasal',
         logout: 'Çıkış',
         login: 'Giriş',
-        register: 'Kayıt'
+        register: 'Kayıt',
+        features: 'Özellikler',
+        pricing: 'Fiyatlandırma',
+        
       },
 
       auth: {
@@ -401,6 +501,53 @@ const resources = {
         info: 'Información'
       },
 
+      home: {
+        hero: {
+          title: 'Nunca te Sientas Solo con tus Emociones',
+          subtitle: 'Rastrea tu estado de ánimo, chatea con tu compañero de IA y obtén información sobre tu bienestar emocional.',
+          privacy: 'Tus datos son privados y seguros'
+        },
+        cta: {
+          trial: 'Comenzar Prueba Gratuita',
+          demo: 'Ver Demo'
+        },
+        features: {
+          mood: {
+            title: 'Seguimiento Diario del Estado de Ánimo',
+            desc: 'Seguimiento rápido y simple basado en emojis. Registra cómo te sientes en segundos.'
+          },
+          ai: {
+            title: 'Compañero de IA',
+            desc: 'Chatea con tu compañero de IA personal para apoyo emocional e información.'
+          },
+          insights: {
+            title: 'Perspectivas Emocionales',
+            desc: 'Comprende tus patrones y tendencias con hermosas visualizaciones.'
+          }
+        },
+        pricing: {
+          title: 'Precios Simples y Transparentes',
+          subtitle: 'Comienza gratis, actualiza cuando estés listo',
+          free: {
+            title: 'Gratis',
+            feature1: 'Seguimiento diario del estado de ánimo',
+            feature2: '5 mensajes de IA por día',
+            feature3: 'Información básica',
+            button: 'Comenzar'
+          },
+          premium: {
+            title: 'Premium',
+            badge: 'POPULAR',
+            feature1: 'Seguimiento ilimitado del estado de ánimo',
+            feature2: '10 mensajes de IA por día',
+            feature3: 'Análisis avanzados',
+            feature4: 'Exportar datos',
+            button: 'Comenzar Prueba Gratuita'
+          }
+        },
+        footer: '© 2025 Emotice. Tu compañero de bienestar emocional.'
+      },
+
       nav: {
         home: 'Inicio',
         dashboard: 'Panel',
@@ -411,7 +558,9 @@ const resources = {
         legal: 'Legal',
         logout: 'Cerrar sesión',
         login: 'Iniciar sesión',
-        register: 'Registrarse'
+        register: 'Registrarse',
+        features: 'Características',
+        pricing: 'Precios',
       },
 
       auth: {

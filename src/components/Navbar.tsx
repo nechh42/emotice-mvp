@@ -21,10 +21,10 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group" onClick={closeMenu}>
             <img 
-          src="/logom.png" 
-          alt="Emotice Logo" 
-          className="w-16 h-16 transform group-hover:scale-110 transition-transform"
-           />
+              src="/logom.png" 
+              alt="Emotice Logo" 
+              className="w-16 h-16 object-contain transform group-hover:scale-110 transition-transform"
+            />
             <span className="text-xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
               Emotice
             </span>
@@ -43,14 +43,14 @@ const Navbar = () => {
               href="#features" 
               className="text-gray-700 hover:text-purple-600 font-medium transition-colors"
             >
-              Features
+              {t('nav.features')}
             </a>
             
             <a 
               href="#pricing" 
               className="text-gray-700 hover:text-purple-600 font-medium transition-colors"
             >
-              Pricing
+              {t('nav.pricing')}
             </a>
 
             {/* Legal Dropdown */}
@@ -147,7 +147,7 @@ const Navbar = () => {
               className="block py-2 text-gray-700 hover:text-purple-600 font-medium"
               onClick={closeMenu}
             >
-              Features
+              {t('nav.features')}
             </a>
             
             <a 
@@ -155,12 +155,12 @@ const Navbar = () => {
               className="block py-2 text-gray-700 hover:text-purple-600 font-medium"
               onClick={closeMenu}
             >
-              Pricing
+              {t('nav.pricing')}
             </a>
 
             {/* Mobile Legal Menu */}
             <div className="border-t border-gray-200 pt-3 mt-3">
-              <p className="text-sm font-semibold text-gray-500 mb-2">Legal</p>
+              <p className="text-sm font-semibold text-gray-500 mb-2">{t('nav.legal')}</p>
               <Link 
                 to="/legal/terms" 
                 className="block py-2 text-gray-700 hover:text-purple-600"
