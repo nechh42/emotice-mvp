@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Smile, Frown, Meh, Calendar, TrendingUp } from "lucide-react";
 import Navbar from "@/components/Navbar"; // ← YENİ EKLENEN
+import { useTranslation } from "react-i18next";
 
 const MOODS = [
   { id: 1, emoji: "😭", label: "Terrible", icon: Frown, color: "mood-terrible" },
@@ -18,6 +19,7 @@ const Dashboard = () => {
   const [selectedMood, setSelectedMood] = useState<number | null>(null);
   const [note, setNote] = useState("");
   const { toast } = useToast();
+  const { t } = useTranslation();
 
   const handleSaveMood = () => {
     if (!selectedMood) {
@@ -49,7 +51,7 @@ const Dashboard = () => {
         {/* Today's Mood Card */}
         <Card className="p-6 mb-6 shadow-soft animate-fade-in">
           <h2 className="text-2xl font-semibold mb-6 text-center">
-            How are you feeling today?
+            {t('dashboard.mood.question')}
           </h2>
 
           {/* Mood Selector */}
@@ -79,7 +81,7 @@ const Dashboard = () => {
           {/* Note Input */}
           <div className="mb-4">
             <label className="text-sm font-medium mb-2 block">
-              Add a note (optional)
+              {t('dashboard.mood.noteLabel')}
             </label>
             <Textarea
               placeholder="What's on your mind?"

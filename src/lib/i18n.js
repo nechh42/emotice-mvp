@@ -79,6 +79,13 @@ const resources = {
         footer: '© 2025 Emotice. Your emotional wellness companion.'
       },
 
+      dashboard: {
+        mood: {
+          question: 'How are you feeling today?',
+          noteLabel: 'Add a note (optional)'
+        }
+      },
+
       // Navigation
       nav: {
         home: 'Home',
@@ -318,6 +325,13 @@ const resources = {
         footer: '© 2025 Emotice. Duygusal sağlık arkadaşınız.'
       },
 
+      dashboard: {
+        mood: {
+          question: 'Bugün nasıl hissediyorsun?',
+          noteLabel: 'Not ekle (opsiyonel)'
+        }
+      },
+
       nav: {
         home: 'Ana Sayfa',
         dashboard: 'Panel',
@@ -546,6 +560,13 @@ const resources = {
           }
         },
         footer: '© 2025 Emotice. Tu compañero de bienestar emocional.'
+      },
+
+      dashboard: {
+        mood: {
+          question: '¿Cómo te sientes hoy?',
+          noteLabel: 'Añadir una nota (opcional)'
+        }
       },
 
       nav: {
