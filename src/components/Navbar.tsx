@@ -23,7 +23,7 @@ const Navbar = () => {
             <img 
           src="/logom.png" 
           alt="Emotice Logo" 
-          className="w-10 h-10 transform group-hover:scale-110 transition-transform"
+          className="w-16 h-16 transform group-hover:scale-110 transition-transform"
            />
             <span className="text-xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
               Emotice
