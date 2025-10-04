@@ -20,9 +20,11 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group" onClick={closeMenu}>
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 via-purple-400 to-pink-400 flex items-center justify-center transform group-hover:scale-110 transition-transform">
-              <span className="text-white text-xl">❤️</span>
-            </div>
+            <img 
+          src="/logom.png" 
+          alt="Emotice Logo" 
+          className="w-10 h-10 transform group-hover:scale-110 transition-transform"
+           />
             <span className="text-xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
               Emotice
             </span>
