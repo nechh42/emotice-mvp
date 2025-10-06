@@ -1,60 +1,55 @@
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Card } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useToast } from "@/hooks/use-toast";
-import { Mail, Lock, User } from "lucide-react";
-import Navbar from "@/components/Navbar";
+﻿import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Card } from '@/components/ui/card';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Mail, Lock, User } from 'lucide-react';
+import { useAuth } from '@/contexts/AuthContext';
 
 const Auth = () => {
+  const { signIn, signUp } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
-  const { toast } = useToast();
 
   const [loginData, setLoginData] = useState({
-    email: "",
-    password: "",
+    email: '',
+    password: '',
   });
 
   const [signupData, setSignupData] = useState({
-    name: "",
-    email: "",
-    password: "",
+    name: '',
+    email: '',
+    password: '',
   });
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
 
-    // TODO: Implement Supabase auth
-    setTimeout(() => {
-      toast({
-        title: "Welcome back!",
-        description: "Successfully logged in.",
-      });
+    try {
+      await signIn(loginData.email, loginData.password);
+    } catch (error) {
+      console.error('Login error:', error);
+    } finally {
       setIsLoading(false);
-    }, 1000);
+    }
   };
 
   const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
 
-    // TODO: Implement Supabase auth
-    setTimeout(() => {
-      toast({
-        title: "Account created!",
-        description: "Welcome to Emotice.",
-      });
+    try {
+      await signUp(signupData.email, signupData.password, signupData.name);
+    } catch (error) {
+      console.error('Signup error:', error);
+    } finally {
       setIsLoading(false);
-    }, 1000);
+    }
   };
 
   return (
     <div className="min-h-screen bg-gradient-calm flex items-center justify-center p-4">
       <div className="w-full max-w-md animate-scale-in">
-      <Navbar />
-        {/* Logo */}
         <div className="text-center mb-8">
           <div className="w-16 h-16 rounded-full bg-gradient-primary mx-auto mb-4" />
           <h1 className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-2">
@@ -65,7 +60,6 @@ const Auth = () => {
           </p>
         </div>
 
-        {/* Auth Card */}
         <Card className="p-6 shadow-glow">
           <Tabs defaultValue="login" className="w-full">
             <TabsList className="grid w-full grid-cols-2 mb-6">
@@ -73,7 +67,6 @@ const Auth = () => {
               <TabsTrigger value="signup">Sign Up</TabsTrigger>
             </TabsList>
 
-            {/* Login Form */}
             <TabsContent value="login">
               <form onSubmit={handleLogin} className="space-y-4">
                 <div className="space-y-2">
@@ -115,7 +108,7 @@ const Auth = () => {
                   className="w-full bg-gradient-primary hover:opacity-90"
                   disabled={isLoading}
                 >
-                  {isLoading ? "Signing in..." : "Sign In"}
+                  {isLoading ? 'Signing in...' : 'Sign In'}
                 </Button>
 
                 <Button type="button" variant="link" className="w-full text-sm">
@@ -124,7 +117,6 @@ const Auth = () => {
               </form>
             </TabsContent>
 
-            {/* Signup Form */}
             <TabsContent value="signup">
               <form onSubmit={handleSignup} className="space-y-4">
                 <div className="space-y-2">
@@ -186,7 +178,7 @@ const Auth = () => {
                   className="w-full bg-gradient-primary hover:opacity-90"
                   disabled={isLoading}
                 >
-                  {isLoading ? "Creating account..." : "Create Account"}
+                  {isLoading ? 'Creating account...' : 'Create Account'}
                 </Button>
 
                 <p className="text-xs text-muted-foreground text-center">
