@@ -5,6 +5,13 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 const resources = {
   en: {
     translation: {
+      common: {
+        readHere: 'Read here',
+        loading: 'Loading...',
+        continue: 'Continue',
+        back: 'Back',
+        skip: 'Skip'
+      },
       nav: {
         home: 'Home',
         features: 'Features',
@@ -19,6 +26,23 @@ const resources = {
       },
       auth: {
         signIn: 'Sign In'
+      },
+      onboarding: {
+        welcome: 'Welcome to EMOTICE',
+        consent: 'Legal Consent',
+        consentText: 'Please review and accept our terms to continue',
+        criticalWarning: 'CRITICAL WARNING',
+        criticalWarningText: 'EMOTICE is NOT a medical device. In emergencies, call 112 or 911.',
+        acceptAll: 'Accept All',
+        iAcceptTerms: 'I accept the Terms of Service',
+        iAcceptPrivacy: 'I accept the Privacy Policy',
+        iUnderstandDisclaimer: 'I understand EMOTICE is not medical advice (Medical Disclaimer)',
+        consentError: 'You must accept all terms to continue',
+        acceptAndContinue: 'Accept & Continue',
+        ageVerification: 'Age Verification',
+        ageVerificationText: 'You must be 16 years or older to use EMOTICE',
+        surveyTitle: 'Quick Survey',
+        surveySubtitle: 'Help us personalize your experience (5 questions)'
       },
       home: {
         hero: {
@@ -103,6 +127,13 @@ const resources = {
   },
   tr: {
     translation: {
+      common: {
+        readHere: 'Buradan okuyun',
+        loading: 'Yükleniyor...',
+        continue: 'Devam Et',
+        back: 'Geri',
+        skip: 'Atla'
+      },
       nav: {
         home: 'Ana Sayfa',
         features: 'Özellikler',
@@ -117,6 +148,23 @@ const resources = {
       },
       auth: {
         signIn: 'Giriş Yap'
+      },
+      onboarding: {
+        welcome: 'EMOTICE\'e Hoş Geldiniz',
+        consent: 'Yasal Rıza',
+        consentText: 'Devam etmek için lütfen şartlarımızı inceleyin ve kabul edin',
+        criticalWarning: 'KRİTİK UYARI',
+        criticalWarningText: 'EMOTICE tıbbi bir cihaz DEĞİLDİR. Acil durumlarda 112 veya 911\'i arayın.',
+        acceptAll: 'Tümünü Kabul Et',
+        iAcceptTerms: 'Hizmet Koşullarını kabul ediyorum',
+        iAcceptPrivacy: 'Gizlilik Politikasını kabul ediyorum',
+        iUnderstandDisclaimer: 'EMOTICE\'in tıbbi tavsiye olmadığını anlıyorum (Tıbbi Sorumluluk Reddi)',
+        consentError: 'Devam etmek için tüm şartları kabul etmelisiniz',
+        acceptAndContinue: 'Kabul Et & Devam Et',
+        ageVerification: 'Yaş Doğrulama',
+        ageVerificationText: 'EMOTICE\'i kullanmak için en az 16 yaşında olmalısınız',
+        surveyTitle: 'Hızlı Anket',
+        surveySubtitle: 'Deneyiminizi kişiselleştirmemize yardımcı olun (5 soru)'
       },
       home: {
         hero: {
@@ -201,6 +249,13 @@ const resources = {
   },
   es: {
     translation: {
+      common: {
+        readHere: 'Leer aquí',
+        loading: 'Cargando...',
+        continue: 'Continuar',
+        back: 'Atrás',
+        skip: 'Omitir'
+      },
       nav: {
         home: 'Inicio',
         features: 'Características',
@@ -215,6 +270,23 @@ const resources = {
       },
       auth: {
         signIn: 'Iniciar sesión'
+      },
+      onboarding: {
+        welcome: 'Bienvenido a EMOTICE',
+        consent: 'Consentimiento Legal',
+        consentText: 'Por favor revisa y acepta nuestros términos para continuar',
+        criticalWarning: 'ADVERTENCIA CRÍTICA',
+        criticalWarningText: 'EMOTICE NO es un dispositivo médico. En emergencias, llame al 112 o 911.',
+        acceptAll: 'Aceptar Todo',
+        iAcceptTerms: 'Acepto los Términos de Servicio',
+        iAcceptPrivacy: 'Acepto la Política de Privacidad',
+        iUnderstandDisclaimer: 'Entiendo que EMOTICE no es asesoramiento médico (Descargo Médico)',
+        consentError: 'Debe aceptar todos los términos para continuar',
+        acceptAndContinue: 'Aceptar y Continuar',
+        ageVerification: 'Verificación de Edad',
+        ageVerificationText: 'Debe tener 16 años o más para usar EMOTICE',
+        surveyTitle: 'Encuesta Rápida',
+        surveySubtitle: 'Ayúdanos a personalizar tu experiencia (5 preguntas)'
       },
       home: {
         hero: {

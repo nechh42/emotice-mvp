@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '@/lib/supabase';
 import AgeVerification from '@/components/onboarding/AgeVerification';
@@ -11,12 +11,41 @@ type OnboardingStep = 'age' | 'legal' | 'survey' | 'saving';
 const Onboarding = () => {
   const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState<OnboardingStep>('age');
+  const [isLoading, setIsLoading] = useState(true);
   const [onboardingData, setOnboardingData] = useState({
     birthDate: '',
     age: 0,
     legalAccepted: false,
     surveyData: null as SurveyData | null,
   });
+
+  // Auth guard - check if user is logged in
+  useEffect(() => {
+    const checkAuth = async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      
+      if (!user) {
+        navigate('/auth');
+        return;
+      }
+
+      // Check if already completed onboarding
+      const { data: profile } = await supabase
+        .from('profiles')
+        .select('onboarding_completed')
+        .eq('id', user.id)
+        .single();
+
+      if (profile?.onboarding_completed) {
+        navigate('/dashboard');
+        return;
+      }
+
+      setIsLoading(false);
+    };
+
+    checkAuth();
+  }, [navigate]);
 
   const handleAgeComplete = (birthDate: string, age: number) => {
     setOnboardingData((prev) => ({ ...prev, birthDate, age }));
@@ -41,6 +70,7 @@ const Onboarding = () => {
 
       const db: any = supabase;
 
+      // Update profile
       const { error: profileError } = await db
         .from('profiles')
         .update({
@@ -54,16 +84,18 @@ const Onboarding = () => {
 
       if (profileError) throw profileError;
 
+      // Save survey responses - one row per question
+      const surveyResponses = [
+        { user_id: user.id, question_id: 'gender', answer: surveyData.gender || '' },
+        { user_id: user.id, question_id: 'previous_experience', answer: surveyData.previousExperience || '' },
+        { user_id: user.id, question_id: 'expectations', answer: surveyData.expectations || '' },
+        { user_id: user.id, question_id: 'focus_area', answer: surveyData.focusArea || '' },
+        { user_id: user.id, question_id: 'ai_usage_frequency', answer: surveyData.aiUsageFrequency || '' },
+      ];
+
       const { error: surveyError } = await db
         .from('survey_responses')
-        .insert([{
-          user_id: user.id,
-          gender: surveyData.gender,
-          previous_experience: surveyData.previousExperience,
-          expectations: surveyData.expectations,
-          focus_area: surveyData.focusArea,
-          ai_usage_frequency: surveyData.aiUsageFrequency,
-        }]);
+        .insert(surveyResponses);
 
       if (surveyError) throw surveyError;
 
@@ -75,12 +107,14 @@ const Onboarding = () => {
     }
   };
 
-  if (currentStep === 'saving') {
+  if (isLoading || currentStep === 'saving') {
     return (
       <div className="min-h-screen bg-gradient-calm flex items-center justify-center">
         <div className="text-center">
           <Loader2 className="w-12 h-12 animate-spin text-purple-600 mx-auto mb-4" />
-          <p className="text-lg font-medium">Setting up your account...</p>
+          <p className="text-lg font-medium">
+            {isLoading ? 'Loading...' : 'Setting up your account...'}
+          </p>
           <p className="text-sm text-muted-foreground mt-2">Please wait</p>
         </div>
       </div>

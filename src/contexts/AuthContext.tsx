@@ -63,6 +63,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
             email: email,
             full_name: name,
             avatar_url: null,
+            onboarding_completed: false,
           })
 
         if (profileError) {
@@ -70,26 +71,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           // Don't throw - user is created, profile can be fixed later
         }
 
-        // Create user_profiles entry for onboarding tracking
-        const { error: userProfileError } = await supabase
-          .from('user_profiles')
-          .insert({
-            id: data.user.id,
-            age: 0, // Will be updated in onboarding
-            survey_completed: false,
-          })
-
-        if (userProfileError) {
-          console.error('User profile creation error:', userProfileError)
-        }
-
         toast({
           title: 'Account created!',
-          description: 'Welcome to Emotice. Redirecting to dashboard...',
+          description: 'Welcome to Emotice. Let\'s get you set up...',
         })
 
-        // Redirect to dashboard for now (onboarding will be added later)
-        navigate('/dashboard')
+        // Redirect to onboarding
+        navigate('/onboarding')
       }
     } catch (error: any) {
       toast({
@@ -118,14 +106,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
         // Check if user completed onboarding
         const { data: profile } = await supabase
-          .from('user_profiles')
-          .select('survey_completed')
+          .from('profiles')
+          .select('onboarding_completed')
           .eq('id', data.user.id)
           .single()
 
-        if (!profile || !profile.survey_completed) {
-          // Redirect to dashboard for now (onboarding will be added later)
-          navigate('/dashboard')
+        if (!profile?.onboarding_completed) {
+          navigate('/onboarding')
         } else {
           navigate('/dashboard')
         }

@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import Dashboard from "./pages/Dashboard";
 import Auth from "./pages/Auth";
 import NotFound from "./pages/NotFound";
+import Onboarding from "./pages/Onboarding";
 // Legal Pages
 import Terms from "./pages/legal/Terms";
 import Privacy from "./pages/legal/Privacy";
@@ -27,6 +28,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/auth" element={<Auth />} />
+            <Route path="/onboarding" element={<Onboarding />} />
             
             {/* Legal Routes */}
             <Route path="/legal/terms" element={<Terms />} />
