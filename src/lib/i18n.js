@@ -1,3 +1,4 @@
+// src/lib/i18n.js - DÜZELTİLMİŞ VERSİYON
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
@@ -74,7 +75,7 @@ const resources = {
           free: {
             title: 'Free',
             feature1: 'Daily mood tracking',
-            feature2: '5 AI messages per day',
+            feature2: '15 AI messages per day',
             feature3: 'Basic insights',
             button: 'Get Started'
           },
@@ -82,7 +83,7 @@ const resources = {
             title: 'Premium',
             badge: 'POPULAR',
             feature1: 'Unlimited mood tracking',
-            feature2: '10 AI messages per day',
+            feature2: '100 AI messages per day',
             feature3: 'Advanced analytics',
             feature4: 'Export data',
             button: 'Start Free Trial'
@@ -91,6 +92,10 @@ const resources = {
         footer: '© 2025 Emotice. Your emotional wellness companion.'
       },
       dashboard: {
+        tabs: {
+          moodTracking: 'Mood Tracking',
+          aiCompanion: 'AI Companion'
+        },
         mood: {
           question: 'How are you feeling today?',
           labels: {
@@ -102,7 +107,7 @@ const resources = {
           },
           noteLabel: 'Add a note (optional)',
           notePlaceholder: 'What is on your mind?',
-          saveButton: 'Save Today is Mood'
+          saveButton: 'Save Today\'s Mood'
         },
         stats: {
           dayStreak: 'Day Streak',
@@ -115,6 +120,16 @@ const resources = {
           today: 'Today',
           yesterday: 'Yesterday',
           daysAgo: 'days ago'
+        },
+        chat: {
+          moodSummary: 'Mood Summary',
+          currentMood: 'Current Mood',
+          noData: 'No data yet',
+          recentPatterns: 'Recent Patterns',
+          tips: 'Quick Tips',
+          tip1: 'Share your feelings openly',
+          tip2: 'Ask about mood patterns',
+          tip3: 'Get wellness suggestions'
         },
         toast: {
           selectMood: 'Please select a mood',
@@ -141,7 +156,7 @@ const resources = {
         legal: 'Yasal'
       },
       legal: {
-        terms: 'Hizmet Koşulları',
+        terms: 'Kullanım Koşulları',
         privacy: 'Gizlilik Politikası',
         medical: 'Tıbbi Sorumluluk Reddi',
         cookie: 'Çerez Politikası'
@@ -150,30 +165,30 @@ const resources = {
         signIn: 'Giriş Yap'
       },
       onboarding: {
-        welcome: 'EMOTICE\'e Hoş Geldiniz',
-        consent: 'Yasal Rıza',
-        consentText: 'Devam etmek için lütfen şartlarımızı inceleyin ve kabul edin',
+        welcome: 'EMOTICE\'a Hoş Geldiniz',
+        consent: 'Yasal Onay',
+        consentText: 'Devam etmek için lütfen koşullarımızı inceleyin ve kabul edin',
         criticalWarning: 'KRİTİK UYARI',
-        criticalWarningText: 'EMOTICE tıbbi bir cihaz DEĞİLDİR. Acil durumlarda 112 veya 911\'i arayın.',
+        criticalWarningText: 'EMOTICE tıbbi bir cihaz DEĞİLDİR. Acil durumlarda 112\'yi arayın.',
         acceptAll: 'Tümünü Kabul Et',
-        iAcceptTerms: 'Hizmet Koşullarını kabul ediyorum',
+        iAcceptTerms: 'Kullanım Koşullarını kabul ediyorum',
         iAcceptPrivacy: 'Gizlilik Politikasını kabul ediyorum',
-        iUnderstandDisclaimer: 'EMOTICE\'in tıbbi tavsiye olmadığını anlıyorum (Tıbbi Sorumluluk Reddi)',
-        consentError: 'Devam etmek için tüm şartları kabul etmelisiniz',
-        acceptAndContinue: 'Kabul Et & Devam Et',
+        iUnderstandDisclaimer: 'EMOTICE\'ın tıbbi tavsiye olmadığını anlıyorum (Tıbbi Sorumluluk Reddi)',
+        consentError: 'Devam etmek için tüm koşulları kabul etmelisiniz',
+        acceptAndContinue: 'Kabul Et ve Devam Et',
         ageVerification: 'Yaş Doğrulama',
-        ageVerificationText: 'EMOTICE\'i kullanmak için en az 16 yaşında olmalısınız',
+        ageVerificationText: 'EMOTICE\'ı kullanmak için 16 yaşında veya daha büyük olmalısınız',
         surveyTitle: 'Hızlı Anket',
         surveySubtitle: 'Deneyiminizi kişiselleştirmemize yardımcı olun (5 soru)'
       },
       home: {
         hero: {
           title: 'Duygularınızla Asla Yalnız Hissetmeyin',
-          subtitle: 'Ruh halinizi takip edin, yapay zeka arkadaşınızla sohbet edin ve duygusal sağlık yolculuğunuz hakkında bilgi edinin.',
+          subtitle: 'Ruh halinizi takip edin, AI asistanıyla sohbet edin ve duygusal sağlık yolculuğunuzda içgörüler kazanın.',
           privacy: 'Verileriniz gizli ve güvende'
         },
         cta: {
-          trial: 'Ücretsiz Deneme Başlat',
+          trial: 'Ücretsiz Denemeyi Başlat',
           demo: 'Demoyu Görüntüle'
         },
         features: {
@@ -182,12 +197,12 @@ const resources = {
             desc: 'Hızlı ve basit emoji tabanlı takip. Saniyeler içinde nasıl hissettiğinizi kaydedin.'
           },
           ai: {
-            title: 'Yapay Zeka Arkadaşı',
-            desc: 'Duygusal destek ve içgörüler için kişisel yapay zeka arkadaşınızla sohbet edin.'
+            title: 'AI Asistan',
+            desc: 'Duygusal destek ve içgörüler için kişisel AI asistanınızla sohbet edin.'
           },
           insights: {
             title: 'Duygusal İçgörüler',
-            desc: 'Güzel görselleştirmelerle kalıplarınızı ve eğilimlerinizi anlayın.'
+            desc: 'Güzel görselleştirmelerle modellerinizi ve eğilimlerinizi anlayın.'
           }
         },
         pricing: {
@@ -196,7 +211,7 @@ const resources = {
           free: {
             title: 'Ücretsiz',
             feature1: 'Günlük ruh hali takibi',
-            feature2: 'Günde 5 AI mesajı',
+            feature2: 'Günde 15 AI mesajı',
             feature3: 'Temel içgörüler',
             button: 'Başla'
           },
@@ -204,27 +219,31 @@ const resources = {
             title: 'Premium',
             badge: 'POPÜLER',
             feature1: 'Sınırsız ruh hali takibi',
-            feature2: 'Günde 10 AI mesajı',
-            feature3: 'Gelişmiş analizler',
-            feature4: 'Veri dışa aktarma',
-            button: 'Ücretsiz Deneme Başlat'
+            feature2: 'Günde 100 AI mesajı',
+            feature3: 'Gelişmiş analitik',
+            feature4: 'Veri aktarımı',
+            button: 'Ücretsiz Denemeyi Başlat'
           }
         },
-        footer: '© 2025 Emotice. Duygusal sağlık arkadaşınız.'
+        footer: '© 2025 Emotice. Duygusal sağlık yol arkadaşınız.'
       },
       dashboard: {
+        tabs: {
+          moodTracking: 'Ruh Hali Takibi',
+          aiCompanion: 'AI Asistan'
+        },
         mood: {
-          question: 'Bugün nasıl hissediyorsun?',
+          question: 'Bugün nasıl hissediyorsunuz?',
           labels: {
-            terrible: 'Kötü',
-            bad: 'Fena',
-            okay: 'İdare Eder',
+            terrible: 'Berbat',
+            bad: 'Kötü',
+            okay: 'Normal',
             good: 'İyi',
             great: 'Harika'
           },
-          noteLabel: 'Not ekle (opsiyonel)',
-          notePlaceholder: 'Aklından ne geçiyor?',
-          saveButton: 'Bugünün Ruh Halini Kaydet'
+          noteLabel: 'Not ekleyin (isteğe bağlı)',
+          notePlaceholder: 'Aklınızdan neler geçiyor?',
+          saveButton: 'Bugünkü Ruh Halini Kaydet'
         },
         stats: {
           dayStreak: 'Gün Serisi',
@@ -238,11 +257,21 @@ const resources = {
           yesterday: 'Dün',
           daysAgo: 'gün önce'
         },
+        chat: {
+          moodSummary: 'Ruh Hali Özeti',
+          currentMood: 'Mevcut Ruh Hali',
+          noData: 'Henüz veri yok',
+          recentPatterns: 'Son Modeller',
+          tips: 'Hızlı İpuçları',
+          tip1: 'Duygularınızı açıkça paylaşın',
+          tip2: 'Ruh hali modelleri hakkında soru sorun',
+          tip3: 'Sağlık önerileri alın'
+        },
         toast: {
-          selectMood: 'Lütfen bir ruh hali seç',
-          selectMoodDesc: 'Bugün nasıl hissettiğini seç',
+          selectMood: 'Lütfen bir ruh hali seçin',
+          selectMoodDesc: 'Bugün nasıl hissettiğinizi seçin',
           saved: 'Ruh hali kaydedildi!',
-          savedDesc: 'Bugünkü ruh halin kaydedildi.'
+          savedDesc: 'Bugünkü ruh haliniz kaydedildi.'
         }
       }
     }
@@ -254,7 +283,7 @@ const resources = {
         loading: 'Cargando...',
         continue: 'Continuar',
         back: 'Atrás',
-        skip: 'Omitir'
+        skip: 'Saltar'
       },
       nav: {
         home: 'Inicio',
@@ -262,79 +291,11 @@ const resources = {
         pricing: 'Precios',
         legal: 'Legal'
       },
-      legal: {
-        terms: 'Términos de Servicio',
-        privacy: 'Política de Privacidad',
-        medical: 'Descargo de Responsabilidad Médica',
-        cookie: 'Política de Cookies'
-      },
-      auth: {
-        signIn: 'Iniciar sesión'
-      },
-      onboarding: {
-        welcome: 'Bienvenido a EMOTICE',
-        consent: 'Consentimiento Legal',
-        consentText: 'Por favor revisa y acepta nuestros términos para continuar',
-        criticalWarning: 'ADVERTENCIA CRÍTICA',
-        criticalWarningText: 'EMOTICE NO es un dispositivo médico. En emergencias, llame al 112 o 911.',
-        acceptAll: 'Aceptar Todo',
-        iAcceptTerms: 'Acepto los Términos de Servicio',
-        iAcceptPrivacy: 'Acepto la Política de Privacidad',
-        iUnderstandDisclaimer: 'Entiendo que EMOTICE no es asesoramiento médico (Descargo Médico)',
-        consentError: 'Debe aceptar todos los términos para continuar',
-        acceptAndContinue: 'Aceptar y Continuar',
-        ageVerification: 'Verificación de Edad',
-        ageVerificationText: 'Debe tener 16 años o más para usar EMOTICE',
-        surveyTitle: 'Encuesta Rápida',
-        surveySubtitle: 'Ayúdanos a personalizar tu experiencia (5 preguntas)'
-      },
-      home: {
-        hero: {
-          title: 'Nunca te Sientas Solo con tus Emociones',
-          subtitle: 'Rastrea tu estado de ánimo, chatea con tu compañero de IA y obtén información sobre tu bienestar emocional.',
-          privacy: 'Tus datos son privados y seguros'
-        },
-        cta: {
-          trial: 'Comenzar Prueba Gratuita',
-          demo: 'Ver Demo'
-        },
-        features: {
-          mood: {
-            title: 'Seguimiento Diario del Estado de Ánimo',
-            desc: 'Seguimiento rápido y simple basado en emojis. Registra cómo te sientes en segundos.'
-          },
-          ai: {
-            title: 'Compañero de IA',
-            desc: 'Chatea con tu compañero de IA personal para apoyo emocional e información.'
-          },
-          insights: {
-            title: 'Perspectivas Emocionales',
-            desc: 'Comprende tus patrones y tendencias con hermosas visualizaciones.'
-          }
-        },
-        pricing: {
-          title: 'Precios Simples y Transparentes',
-          subtitle: 'Comienza gratis, actualiza cuando estés listo',
-          free: {
-            title: 'Gratis',
-            feature1: 'Seguimiento diario del estado de ánimo',
-            feature2: '5 mensajes de IA por día',
-            feature3: 'Información básica',
-            button: 'Comenzar'
-          },
-          premium: {
-            title: 'Premium',
-            badge: 'POPULAR',
-            feature1: 'Seguimiento ilimitado del estado de ánimo',
-            feature2: '10 mensajes de IA por día',
-            feature3: 'Análisis avanzados',
-            feature4: 'Exportar datos',
-            button: 'Comenzar Prueba Gratuita'
-          }
-        },
-        footer: '© 2025 Emotice. Tu compañero de bienestar emocional.'
-      },
       dashboard: {
+        tabs: {
+          moodTracking: 'Seguimiento de Estado de Ánimo',
+          aiCompanion: 'Compañero IA'
+        },
         mood: {
           question: '¿Cómo te sientes hoy?',
           labels: {
@@ -342,29 +303,107 @@ const resources = {
             bad: 'Mal',
             okay: 'Regular',
             good: 'Bien',
-            great: 'Genial'
-          },
-          noteLabel: 'Añadir una nota (opcional)',
-          notePlaceholder: '¿Qué tienes en mente?',
-          saveButton: 'Guardar Estado de Ánimo de Hoy'
+            great: 'Excelente'
+          }
+        }
+      }
+    }
+  },
+  fr: {
+    translation: {
+      common: {
+        readHere: 'Lire ici',
+        loading: 'Chargement...',
+        continue: 'Continuer',
+        back: 'Retour',
+        skip: 'Passer'
+      },
+      nav: {
+        home: 'Accueil',
+        features: 'Fonctionnalités',
+        pricing: 'Tarifs',
+        legal: 'Légal'
+      },
+      dashboard: {
+        tabs: {
+          moodTracking: 'Suivi de Humeur',
+          aiCompanion: 'Compagnon IA'
         },
-        stats: {
-          dayStreak: 'Racha de Días',
-          avgMood: 'Estado Promedio',
-          thisWeek: 'Esta Semana'
+        mood: {
+          question: 'Comment vous sentez-vous aujourd\'hui ?',
+          labels: {
+            terrible: 'Terrible',
+            bad: 'Mauvais',
+            okay: 'Correct',
+            good: 'Bien',
+            great: 'Excellent'
+          }
+        }
+      }
+    }
+  },
+  ru: {
+    translation: {
+      common: {
+        readHere: 'Читать здесь',
+        loading: 'Загрузка...',
+        continue: 'Продолжить',
+        back: 'Назад',
+        skip: 'Пропустить'
+      },
+      nav: {
+        home: 'Главная',
+        features: 'Функции',
+        pricing: 'Цены',
+        legal: 'Правовая'
+      },
+      dashboard: {
+        tabs: {
+          moodTracking: 'Отслеживание настроения',
+          aiCompanion: 'ИИ Компаньон'
         },
-        entries: {
-          title: 'Entradas Recientes',
-          viewAll: 'Ver Todo',
-          today: 'Hoy',
-          yesterday: 'Ayer',
-          daysAgo: 'días atrás'
+        mood: {
+          question: 'Как вы себя чувствуете сегодня?',
+          labels: {
+            terrible: 'Ужасно',
+            bad: 'Плохо',
+            okay: 'Нормально',
+            good: 'Хорошо',
+            great: 'Отлично'
+          }
+        }
+      }
+    }
+  },
+  zh: {
+    translation: {
+      common: {
+        readHere: '在此阅读',
+        loading: '加载中...',
+        continue: '继续',
+        back: '返回',
+        skip: '跳过'
+      },
+      nav: {
+        home: '首页',
+        features: '功能',
+        pricing: '价格',
+        legal: '法律'
+      },
+      dashboard: {
+        tabs: {
+          moodTracking: '情绪跟踪',
+          aiCompanion: 'AI 伴侣'
         },
-        toast: {
-          selectMood: 'Por favor selecciona un estado de ánimo',
-          selectMoodDesc: 'Elige cómo te sientes hoy',
-          saved: 'Estado de ánimo guardado!',
-          savedDesc: 'Tu estado de ánimo ha sido registrado para hoy.'
+        mood: {
+          question: '你今天感觉如何？',
+          labels: {
+            terrible: '糟透了',
+            bad: '不好',
+            okay: '还行',
+            good: '好',
+            great: '很好'
+          }
         }
       }
     }
@@ -377,7 +416,7 @@ i18n
   .init({
     resources,
     fallbackLng: 'en',
-    supportedLngs: ['en', 'tr', 'es'],
+    supportedLngs: ['en', 'tr', 'es', 'fr', 'ru', 'zh'],
     detection: {
       order: ['localStorage', 'navigator'],
       caches: ['localStorage']

@@ -54,29 +54,27 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
       if (error) throw error
 
-      if (data.user) {
-        // Create profiles entry
-        const { error: profileError } = await supabase
-          .from('profiles')
-          .insert({
-            id: data.user.id,
-            email: email,
-            full_name: name,
-            avatar_url: null,
-            onboarding_completed: false,
-          })
-
+     if (data.user) {
+  const { error: profileError } = await (supabase as any)
+    .from('profiles')
+    .insert([
+      {
+        id: data.user.id,
+        email: email,
+        full_name: name,
+        avatar_url: null,
+        onboarding_completed: false,
+      }
+    ])
         if (profileError) {
           console.error('Profile creation error:', profileError)
-          // Don't throw - user is created, profile can be fixed later
         }
 
         toast({
           title: 'Account created!',
-          description: 'Welcome to Emotice. Let\'s get you set up...',
+          description: "Welcome to Emotice. Let's get you set up...",
         })
 
-        // Redirect to onboarding
         navigate('/onboarding')
       }
     } catch (error: any) {
@@ -104,15 +102,14 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           description: 'Successfully logged in.',
         })
 
-        // Check if user completed onboarding
-        const { data: profile } = await supabase
-          .from('profiles')
-          .select('onboarding_completed')
-          .eq('id', data.user.id)
-          .single()
+        const { data: profile } = await (supabase as any)
+  .from('profiles')
+  .select('onboarding_completed')
+  .eq('id', data.user.id)
+  .single()
 
-        if (!profile?.onboarding_completed) {
-          navigate('/onboarding')
+if (profile?.onboarding_completed === false) {
+  navigate('/onboarding')
         } else {
           navigate('/dashboard')
         }

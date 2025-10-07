@@ -67,64 +67,86 @@ const Index = () => {
         </div>
       </div>
 
-      <div id="pricing" className="container mx-auto px-4 py-16">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4">{t('home.pricing.title')}</h2>
-          <p className="text-muted-foreground mb-8">{t('home.pricing.subtitle')}</p>
-          
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="p-6 rounded-2xl bg-card border-2 border-border shadow-soft">
-              <h3 className="text-2xl font-bold mb-2">{t('home.pricing.free.title')}</h3>
-              <p className="text-4xl font-bold mb-4">$0</p>
-              <ul className="space-y-3 text-left mb-6">
-                <li className="flex items-start gap-2">
-                  <span className="text-mood-good">✓</span>
-                  <span>{t('home.pricing.free.feature1')}</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-mood-good">✓</span>
-                  <span>{t('home.pricing.free.feature2')}</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-mood-good">✓</span>
-                  <span>{t('home.pricing.free.feature3')}</span>
-                </li>
-              </ul>
-              <Button variant="outline" className="w-full">{t('home.pricing.free.button')}</Button>
-            </div>
-
-            <div className="p-6 rounded-2xl bg-gradient-primary text-white border-2 border-primary shadow-glow relative overflow-hidden">
-              <div className="absolute top-2 right-2 bg-white/20 px-3 py-1 rounded-full text-xs font-semibold">
-                {t('home.pricing.premium.badge')}
-              </div>
-              <h3 className="text-2xl font-bold mb-2">{t('home.pricing.premium.title')}</h3>
-              <p className="text-4xl font-bold mb-4">$9.99<span className="text-lg">/mo</span></p>
-              <ul className="space-y-3 text-left mb-6">
-                <li className="flex items-start gap-2">
-                  <span>✓</span>
-                  <span>{t('home.pricing.premium.feature1')}</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span>✓</span>
-                  <span>{t('home.pricing.premium.feature2')}</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span>✓</span>
-                  <span>{t('home.pricing.premium.feature3')}</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span>✓</span>
-                  <span>{t('home.pricing.premium.feature4')}</span>
-                </li>
-              </ul>
-              <Button className="w-full bg-white text-primary hover:bg-white/90">
-                {t('home.pricing.premium.button')}
-              </Button>
-            </div>
-          </div>
-        </div>
+ <div id="pricing" className="container mx-auto px-4 py-16">
+  <div className="max-w-2xl mx-auto text-center">
+    <h2 className="text-3xl font-bold mb-4">Simple, Transparent Pricing</h2>
+    <p className="text-muted-foreground mb-8">Start free, upgrade when you are ready</p>
+    
+    <div className="grid md:grid-cols-2 gap-6">
+      <div className="p-6 rounded-2xl bg-card border-2 border-border shadow-soft">
+        <h3 className="text-2xl font-bold mb-2">Free</h3>
+        <p className="text-4xl font-bold mb-4">$0</p>
+        <ul className="space-y-3 text-left mb-6">
+          <li className="flex items-start gap-2">
+            <span className="text-mood-good">✓</span>
+            <span>Daily mood tracking</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-mood-good">✓</span>
+            <span>15 AI messages per day</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-mood-good">✓</span>
+            <span>Basic insights</span>
+          </li>
+        </ul>
+        <Button asChild variant="outline" className="w-full">
+          <Link to="/auth">Get Started</Link>
+        </Button>
       </div>
 
+      <div className="p-6 rounded-2xl bg-gradient-primary text-white border-2 border-primary shadow-glow relative overflow-hidden">
+        <div className="absolute top-2 right-2 bg-white/20 px-3 py-1 rounded-full text-xs font-semibold">
+          POPULAR
+        </div>
+        <h3 className="text-2xl font-bold mb-2">Premium</h3>
+        <p className="text-4xl font-bold mb-4">$7.99<span className="text-lg">/mo</span></p>
+        <ul className="space-y-3 text-left mb-6">
+          <li className="flex items-start gap-2">
+            <span>✓</span>
+            <span>Unlimited mood tracking</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span>✓</span>
+            <span>100 AI messages per day</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span>✓</span>
+            <span>Advanced analytics</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span>✓</span>
+            <span>Export data</span>
+          </li>
+        </ul>
+        <Button asChild className="w-full bg-white text-primary hover:bg-white/90">
+          <Link to="/auth">Start Free Trial</Link>
+        </Button>
+      </div>
+    </div>
+
+    {/* Premium Options */}
+    <div className="mt-8 p-6 bg-secondary rounded-2xl">
+      <h4 className="font-semibold mb-4 text-center">Premium Plan Options</h4>
+      <div className="grid grid-cols-3 gap-4 text-sm">
+        <div className="text-center p-3 bg-white rounded-lg">
+          <p className="font-bold">1 Month</p>
+          <p className="text-lg font-bold text-primary">$7.99</p>
+        </div>
+        <div className="text-center p-3 bg-white rounded-lg border-2 border-green-200">
+          <p className="font-bold">3 Months</p>
+          <p className="text-lg font-bold text-primary">$20.99</p>
+          <p className="text-xs text-green-600">12% savings</p>
+        </div>
+        <div className="text-center p-3 bg-white rounded-lg border-2 border-green-300">
+          <p className="font-bold">6 Months</p>
+          <p className="text-lg font-bold text-primary">$38.99</p>
+          <p className="text-xs text-green-600">18% savings</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
       <footer className="border-t border-border bg-card/50 backdrop-blur-sm py-8 mt-16">
         <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
           <p>{t('home.footer')}</p>

@@ -30,14 +30,14 @@ const Onboarding = () => {
       }
 
       // Check if already completed onboarding
-      const { data: profile } = await supabase
-        .from('profiles')
-        .select('onboarding_completed')
-        .eq('id', user.id)
-        .single();
+      const { data: profile } = await (supabase as any)
+  .from('profiles')
+  .select('onboarding_completed')
+  .eq('id', user.id)
+  .single()
 
-      if (profile?.onboarding_completed) {
-        navigate('/dashboard');
+if (profile?.onboarding_completed) {
+  navigate('/dashboard')
         return;
       }
 
