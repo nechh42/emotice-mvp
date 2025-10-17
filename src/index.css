@@ -1,0 +1,105 @@
+/* src/index.css
+   - Mutlaka UTF-8 (BOM olmadan) kaydedin
+   - Tailwind direktifleri zorunlu: base, components, utilities
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- Base resets / font / root değişkenleri --- */
+:root{
+  --bg-gradient-start: #f7fbff;
+  --bg-gradient-end: #eef2ff;
+  --primary-500: #6366f1;
+  --primary-600: #4f46e5;
+  --muted-foreground: #6b7280;
+  --card-bg: rgba(255,255,255,0.6);
+  --border-color: rgba(15,23,42,0.06);
+  --mood-good: #10b981;
+  
+  /* Shadcn UI Variables */
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+  --primary: 262.1 83.3% 57.8%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222.2 47.4% 11.2%;
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --accent: 210 40% 96.1%;
+  --accent-foreground: 222.2 47.4% 11.2%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 262.1 83.3% 57.8%;
+  --radius: 0.5rem;
+}
+
+/* Tipografi ve body */
+@layer base {
+  html,body,#root {
+    height: 100%;
+    background-color: white;
+  }
+  body {
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    color: #0f172a;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image: linear-gradient(180deg, var(--bg-gradient-start), var(--bg-gradient-end));
+  }
+
+  /* Muted text utility */
+  .text-muted-foreground {
+    color: var(--muted-foreground);
+  }
+}
+
+/* --- Bileşen / yardımcı sınıflar --- */
+@layer components {
+  .bg-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(6px);
+  }
+
+  .bg-gradient-primary {
+    background-image: linear-gradient(90deg, var(--primary-500), var(--primary-600));
+  }
+
+  .bg-gradient-calm {
+    background-image: linear-gradient(180deg, rgba(99,102,241,0.06), rgba(99,102,241,0.02));
+  }
+
+  .shadow-glow {
+    box-shadow: 0 6px 20px rgba(79,70,229,0.12), 0 2px 6px rgba(2,6,23,0.04);
+  }
+
+  .border-border {
+    border-color: var(--border-color);
+  }
+}
+
+/* --- Küçük yardımcı utility'ler ve animasyonlar --- */
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 420ms ease both;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .shadow-soft {
+    box-shadow: 0 8px 20px rgba(2,6,23,0.04);
+  }
+
+  /* mood color utility örneği */
+  .bg-mood-good\/10 { background-color: rgba(16,185,129,0.10); }
+}
